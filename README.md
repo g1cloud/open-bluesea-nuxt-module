@@ -159,6 +159,26 @@ pnpm test
 pnpm test:types
 ```
 
+## Publishing
+
+```bash
+# Full release (lint, test, build, changelog, publish, push tags)
+pnpm release
+
+# Or step by step:
+# 1. Build the module
+pnpm prepack
+
+# 2. Generate changelog and bump version
+npx changelogen --release
+
+# 3. Publish to npm
+npm publish
+
+# 4. Push tags to git
+git push --follow-tags
+```
+
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@g1cloud/open-bluesea-nuxt-module/latest.svg?style=flat&colorA=020420&colorB=00DC82
 [npm-version-href]: https://npmjs.com/package/@g1cloud/open-bluesea-nuxt-module

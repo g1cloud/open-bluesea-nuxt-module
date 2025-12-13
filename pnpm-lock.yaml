@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@g1cloud/open-bluesea-core':
-        specifier: 1.0.0-alpha.4
-        version: 1.0.0-alpha.4(dayjs@1.11.19)(tslib@2.8.1)(vue@3.5.25(typescript@5.9.3))
+        specifier: 1.0.0-alpha.5
+        version: 1.0.0-alpha.5(dayjs@1.11.19)(tslib@2.8.1)(vue@3.5.25(typescript@5.9.3))
       '@nuxt/kit':
         specifier: ^4.2.1
         version: 4.2.1(magicast@0.5.1)
@@ -431,8 +431,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@g1cloud/open-bluesea-core@1.0.0-alpha.4':
-    resolution: {integrity: sha512-Y03ZoSTxNGj19lAvIklXnpDDNPJG+NkeGsec+Hv1+66Y+B8kfBn2vpGS4VT7lxjOqBBJuBd0pYY3lzROzQBWMQ==}
+  '@g1cloud/open-bluesea-core@1.0.0-alpha.5':
+    resolution: {integrity: sha512-5PtzMVkeEn94iq1WJDO1g/Fg5U/9vP0mlzvAMI/3vyqns7Y4qo+6FtAIUhP5fkgAf0r42q7ceUmd68Ba952psg==}
     engines: {node: '>= 24.3.0'}
     peerDependencies:
       dayjs: ^1.11.19
@@ -4483,7 +4483,7 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@g1cloud/open-bluesea-core@1.0.0-alpha.4(dayjs@1.11.19)(tslib@2.8.1)(vue@3.5.25(typescript@5.9.3))':
+  '@g1cloud/open-bluesea-core@1.0.0-alpha.5(dayjs@1.11.19)(tslib@2.8.1)(vue@3.5.25(typescript@5.9.3))':
     dependencies:
       dayjs: 1.11.19
       tslib: 2.8.1
