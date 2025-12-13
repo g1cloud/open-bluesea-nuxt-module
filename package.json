@@ -1,8 +1,8 @@
 {
-  "name": "open-bluesea-nuxt-module",
-  "version": "1.0.0",
+  "name": "@g1cloud/open-bluesea-nuxt-module",
+  "version": "1.0.0-alpha.1",
   "description": "Open Bluesea Next Module",
-  "repository": "your-org/open-bluesea-nuxt-module",
+  "repository": "github:g1cloud/open-bluesea-nuxt-module",
   "license": "MIT",
   "type": "module",
   "exports": {
