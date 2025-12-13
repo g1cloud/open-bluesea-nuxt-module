@@ -107,6 +107,16 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
+    // Add CSS - use the compiled CSS directly from dist
+    nuxt.options.css.push('@g1cloud/open-bluesea-core/dist/open-bluesea-core.css')
+
+    // Add Google Material Icons font
+    nuxt.options.app.head.link = nuxt.options.app.head.link || []
+    nuxt.options.app.head.link.push({
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200',
+    })
+
     // Pass module options to runtime config
     nuxt.options.runtimeConfig.public.openBluesea = {
       ...nuxt.options.runtimeConfig.public.openBluesea as Record<string, unknown>,
