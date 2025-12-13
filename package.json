@@ -34,6 +34,7 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
+    "@g1cloud/open-bluesea-core": "1.0.0-alpha.4",
     "@nuxt/kit": "^4.2.1"
   },
   "devDependencies": {

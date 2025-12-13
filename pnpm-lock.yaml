@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@g1cloud/open-bluesea-core':
+        specifier: 1.0.0-alpha.4
+        version: 1.0.0-alpha.4(dayjs@1.11.19)(tslib@2.8.1)(vue@3.5.25(typescript@5.9.3))
       '@nuxt/kit':
         specifier: ^4.2.1
         version: 4.2.1(magicast@0.5.1)
@@ -427,6 +430,14 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@g1cloud/open-bluesea-core@1.0.0-alpha.4':
+    resolution: {integrity: sha512-Y03ZoSTxNGj19lAvIklXnpDDNPJG+NkeGsec+Hv1+66Y+B8kfBn2vpGS4VT7lxjOqBBJuBd0pYY3lzROzQBWMQ==}
+    engines: {node: '>= 24.3.0'}
+    peerDependencies:
+      dayjs: ^1.11.19
+      tslib: ^2.8.1
+      vue: ^3.5.22
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1905,6 +1916,9 @@ packages:
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
+
+  dayjs@1.11.19:
+    resolution: {integrity: sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==}
 
   db0@0.3.4:
     resolution: {integrity: sha512-RiXXi4WaNzPTHEOu8UPQKMooIbqOEyqA1t7Z6MsdxSCeb8iUC9ko3LcmsLmeUt2SM5bctfArZKkRQggKZz7JNw==}
@@ -4469,6 +4483,12 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
+  '@g1cloud/open-bluesea-core@1.0.0-alpha.4(dayjs@1.11.19)(tslib@2.8.1)(vue@3.5.25(typescript@5.9.3))':
+    dependencies:
+      dayjs: 1.11.19
+      tslib: 2.8.1
+      vue: 3.5.25(typescript@5.9.3)
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -6134,6 +6154,8 @@ snapshots:
       css-tree: 2.2.1
 
   csstype@3.2.3: {}
+
+  dayjs@1.11.19: {}
 
   db0@0.3.4: {}
 
@@ -8051,8 +8073,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  tslib@2.8.1:
-    optional: true
+  tslib@2.8.1: {}
 
   type-check@0.4.0:
     dependencies:

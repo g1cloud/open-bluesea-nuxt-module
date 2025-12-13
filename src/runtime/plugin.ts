@@ -1,5 +1,9 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin, useRuntimeConfig } from '#app'
+import { BlueseaPlugin } from '@g1cloud/open-bluesea-core'
 
-export default defineNuxtPlugin((_nuxtApp) => {
-  console.log('Plugin injected by open-bluesea-nuxt-module!')
+export default defineNuxtPlugin((nuxtApp) => {
+  const config = useRuntimeConfig()
+  const blueseaOptions = config.public.openBluesea || {}
+
+  nuxtApp.vueApp.use(BlueseaPlugin, blueseaOptions)
 })
