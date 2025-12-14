@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Nuxt 4 module (`open-bluesea-nuxt-module`) built using `@nuxt/module-builder`. It follows the standard Nuxt module structure and provides a plugin that gets injected into consuming Nuxt applications.
 
-이 nuxt module 은 `@g1cloud/open-bluesea-core` 라이브러리를 nuxt 에서 사용하기 위한 모듈이다.
+이 nuxt module 은 `@g1cloud/open-bluesea-core` 와 `@g1cloud/open-bluesea-grid` 라이브러리를 nuxt 에서 사용하기 위한 모듈이다.
+
+`open-bluesea-core` 와 `open-bluesea-grid` 의 사용자 가이드 문서는 `/Users/kimos/git/blue-6/open-bluesea/docs` 에 있다.
 
 ## Commands
 

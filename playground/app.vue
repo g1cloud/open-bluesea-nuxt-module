@@ -43,6 +43,7 @@
           <div class="flex flex-col gap-3">
             <BSTextInput
               v-model="textValue"
+              name="textInput"
               placeholder="Enter text..."
             />
             <p class="text-sm text-gray-500">
@@ -173,6 +174,40 @@
             />
           </div>
         </div>
+
+        <!-- Modal Card -->
+        <div class="bg-white border border-gray-200 rounded-xl p-8">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-teal-500">open_in_new</span>
+            Modal
+          </h2>
+          <div class="flex flex-col gap-3">
+            <BSButton
+              caption="Open Alert Modal"
+              button-color="teal"
+              @click="openAlertModal"
+            />
+            <BSButton
+              caption="Open Yes/No Modal"
+              button-color="amber"
+              @click="openYesNoModal"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Section -->
+      <div class="mt-8 bg-white border border-gray-200 rounded-xl p-8">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-blue-600">table_chart</span>
+          BSGrid
+        </h2>
+        <BSGrid
+          :data="gridData"
+          :columns="gridColumns"
+          :key-provider="(item: GridItem) => item.id"
+          show-serial
+        />
       </div>
     </main>
 
@@ -181,6 +216,9 @@
 
     <!-- Context Menu Container -->
     <BSContextMenuContainer />
+
+    <!-- Modal Container -->
+    <BSModalContainer />
   </div>
 </template>
 
@@ -204,6 +242,13 @@ interface SelectItem {
   label: string
 }
 
+interface GridItem {
+  id: string
+  name: string
+  email: string
+  status: string
+}
+
 const radioItems: RadioItem[] = [
   { key: 'option1', label: 'Option 1' },
   { key: 'option2', label: 'Option 2' },
@@ -217,8 +262,36 @@ const selectItems: SelectItem[] = [
   { key: 'grape', label: 'Grape' },
 ]
 
+const gridData: GridItem[] = [
+  { id: '1', name: 'John Doe', email: 'john@example.com', status: 'Active' },
+  { id: '2', name: 'Jane Smith', email: 'jane@example.com', status: 'Active' },
+  { id: '3', name: 'Bob Johnson', email: 'bob@example.com', status: 'Inactive' },
+  { id: '4', name: 'Alice Brown', email: 'alice@example.com', status: 'Active' },
+]
+
+const gridColumns = [
+  { propertyId: 'name', caption: 'Name', width: 150 },
+  { propertyId: 'email', caption: 'Email', width: 200 },
+  { propertyId: 'status', caption: 'Status', width: 100 },
+]
+
+const modal = useModal()
+
 const handleClick = () => {
   showNotification('Button clicked!', 'info')
+}
+
+const openAlertModal = () => {
+  modal.openAlert('Alert', 'This is an alert message!')
+}
+
+const openYesNoModal = () => {
+  modal.openYesNo(
+    'Confirm',
+    'Are you sure you want to proceed?',
+    () => showNotification('You clicked Yes!', 'info'),
+    () => showNotification('You clicked No!', 'info'),
+  )
 }
 </script>
 

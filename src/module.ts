@@ -60,6 +60,33 @@ const components = [
   'BSNotificationContainer',
   'BSContextMenuContainer',
   'BSContextMenu',
+  // Modal components
+  'BSModalContainer',
+  'BSModalFrame',
+  'BSAlertModal',
+  'BSYesNoModal',
+]
+
+// Component list from @g1cloud/open-bluesea-grid
+const gridComponents = [
+  'BSGrid',
+  'BSGridCell',
+  'BSGridCellCheckbox',
+  'BSGridCellDragHandle',
+  'BSGridCellEdit',
+  'BSGridCellSerialNo',
+  'BSGridColumnSettingModal',
+  'BSGridControl',
+  'BSGridHeaderCell',
+  'BSGridHeaderCellCheckbox',
+  'BSGridHeaderCellResizeHandle',
+  'BSGridHeaderCellSerialNo',
+  'BSGridLookup',
+  'BSGridRow',
+  'BSTextFilter',
+  'BSDateRangeFilter',
+  'BSDateRangeFilters',
+  'BSDateRangePresets',
 ]
 
 // Composables to auto-import
@@ -93,6 +120,11 @@ const composables = [
   'waitUntil',
   'waitDuring',
   'tryUntil',
+  // Modal
+  'createModalPlugin',
+  'useModal',
+  'useModalHandle',
+  'provideModalHandle',
 ]
 
 export default defineNuxtModule<ModuleOptions>({
@@ -109,6 +141,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Add CSS - use the compiled CSS directly from dist
     nuxt.options.css.push('@g1cloud/open-bluesea-core/dist/open-bluesea-core.css')
+    nuxt.options.css.push('@g1cloud/open-bluesea-grid/css/bluesea-grid.css')
 
     // Add Google Material Icons font
     nuxt.options.app.head.link = nuxt.options.app.head.link || []
@@ -126,12 +159,21 @@ export default defineNuxtModule<ModuleOptions>({
     // Add runtime plugin
     addPlugin(resolver.resolve('./runtime/plugin'))
 
-    // Auto-import components
+    // Auto-import components from @g1cloud/open-bluesea-core
     for (const name of components) {
       addComponent({
         name,
         export: name,
         filePath: '@g1cloud/open-bluesea-core',
+      })
+    }
+
+    // Auto-import components from @g1cloud/open-bluesea-grid
+    for (const name of gridComponents) {
+      addComponent({
+        name,
+        export: name,
+        filePath: '@g1cloud/open-bluesea-grid',
       })
     }
 
